@@ -58,7 +58,7 @@ class YesNo(Interaction):
         """
         return (to_check.lower() in self.options) or (to_check == "")
 
-    def show_result(self):
+    def show_result(self, value):
         """Goes back in the terminal and replaces the prompt and answer with a neatly formatted result
         """
         CURSOR_UP = "\x1b[1A"

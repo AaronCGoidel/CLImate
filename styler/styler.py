@@ -4,11 +4,10 @@ class Styler:
     class colors:  # a place for all the colors to live
         red = 31
         green = 32
-        orange = 33
+        yellow = 33
         blue = 34
         purple = 35
         cyan = 36
-        yellow = 93
         light_blue = 94
         pink = 95
 
