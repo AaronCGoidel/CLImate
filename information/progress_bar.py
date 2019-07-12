@@ -29,14 +29,17 @@ class ProgressBar(Message):
         self.info = self.bar.format(fill, remainder, self.format_percent())
         Message.display(self)
 
+    def is_done(self):
+        return self.completed >= self.total
+
     def format_percent(self):
         percent = "{:.1f}%".format((self.completed / self.total) * 100)
-        if self.completed >= self.total:
+        if self.is_done():
             percent = s.apply(percent, s.colors.green)
         return percent
 
     def increment(self, step=1):
         self.completed += step
-        if self.completed >= self.total:
+        if self.is_done():
             self.end = "\n"
         self.display()
