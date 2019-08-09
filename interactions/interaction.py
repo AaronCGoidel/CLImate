@@ -54,16 +54,16 @@ class Interaction:
 
     def prompt_user(self):
         """Prompts the user with a querry, takes input, and validates it.
-        If the input recieved is valid, the output is displayed and value returned.
+        If the input received is valid, the output is displayed and value returned.
         If the input is not valid, the user is prompted again.
         
         Returns:
             [type]: [description]
         """
         self.show_prompt()
-        recieved = stdin.readline().strip()
-        if self.validate(recieved):
-            value = self.translate(recieved)
+        received = stdin.readline().strip()
+        if self.validate(received):
+            value = self.translate(received)
             self.show_result(value)
             return value
         return self.prompt_user()
