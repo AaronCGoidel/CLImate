@@ -132,6 +132,9 @@ dmypy.json
 
 .DS_Store
 
+!.idea*
+
+.DS_Store
 
 demo2.py
 demo3.py

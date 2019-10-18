@@ -31,7 +31,7 @@ class CLI:
         time.sleep(rest)
 
     def progressBar(self, total=0, step=1):
-        if self.bar == None:
+        if self.bar is None:
             self.bar = ProgressBar(total)
         else:
             self.bar.increment(step)

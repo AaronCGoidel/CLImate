@@ -2,7 +2,7 @@ from sys import stdin, stdout
 
 from .interaction import Interaction
 from styler import Styler
-import sys, tty, termios
+import tty, termios
 
 s = Styler()
 
