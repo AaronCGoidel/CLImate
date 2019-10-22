@@ -24,7 +24,7 @@ class YesNo(Interaction):
         self.flag = s.apply("!", s.colors.yellow)  # default flag is a yellow bang, [!]
 
         self.options = ["y", "n"]  # this is a yes or no question
-        self.default = True if default == "y" else False  # set default value
+        self.default = default == "y"  # set default value
 
         Interaction.__init__(self, prompt, self.options)  # super constructor
 
@@ -84,16 +84,12 @@ class YesNo(Interaction):
                   True: if the user said 'y' or if default is True and user said nothing
                   False: if the user said 'n' or if default value is used and is set to False
         """
-        if raw == "":  # if the input was just enter, return default
-            value = self.default
-        elif raw.lower() == "y":  # user said yes
-            value = True
-        elif raw.lower() == "n":  # user said no
-            value = False
-        if value:
+
+        if raw.lower() == "y" or self.default:
             self.flag = s.apply(
                 u"\N{check mark}", s.colors.green
             )  # set the flag to a green check
+            return True
         else:
             self.flag = s.apply("x", s.colors.red)  # set the flag to a red x
-        return value
+            return False
