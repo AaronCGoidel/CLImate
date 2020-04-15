@@ -10,3 +10,4 @@ Created by: Aaron Goidel
 from .interaction import Interaction
 from .yes_no import YesNo
 from .selector import Selector
+from .user_input import UserInput

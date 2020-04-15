@@ -130,6 +130,12 @@ dmypy.json
 !.vscode/extensions.json
 .vscode/settings.json
 
+.DS_Store
+
 !.idea*
 
 .DS_Store
+
+demo2.py
+demo3.py
+test.py
